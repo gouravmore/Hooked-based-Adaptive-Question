@@ -1,0 +1,51 @@
+{
+    "id": "org.ekstep.teachablemachine",
+    "ver": "1.0",
+    "author": "Gourav More",
+    "title": "The teachable Machine Plugin",
+    "description": "The teachable Machine",
+    "publishedDate": "",
+    "editor": {
+        "main": "editor/plugin.js",
+        "dependencies": [{ "type": "js", "src": "editor/libs/jquery.repeatable.js" }],
+        "menu": [{
+            "id": "teachablemachine",
+            "category": "main",
+            "type": "icon",
+            "toolTip": "Add teachablemachine",
+            "title": "Question Set",
+            "iconClass": "video play outline icon",
+            "onclick": {
+                "id": "org.ekstep.teachablemachine:showPopup"
+            }
+        }],
+        "help": {
+            "src": "editor/help.md",
+            "dataType": "text"
+        },
+        "configManifest": [{
+            "propertyName": "video",
+            "title": "Video Link",
+            "description": "Add video link",
+            "dataType": "input",
+            "valueType": "text",
+            "required": true
+        }, {
+            "propertyName": "questions",
+            "title": "Questions",
+            "description": "Add Questions",
+            "dataType": "textarea",
+            "valueType": "text",
+            "required": true
+        }]
+    },
+    "renderer": {
+        "main": "renderer/plugin.js",
+        "dependencies": [
+            { "type": "js", "src": "renderer/libs/p5.min.js" },
+            { "type": "js", "src": "renderer/libs/p5.dom.min.js" },
+            { "type": "js", "src": "renderer/libs/pp5.min.js" },
+            { "type": "js", "src": "renderer/libs/ml5.min.js" }
+        ]
+    }
+}
